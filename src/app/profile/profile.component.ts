@@ -14,7 +14,7 @@ import { User } from '../searchClasses/user';
 export class ProfileComponent implements OnInit {
 
   userProfile: User
-  userRepo:Repositories
+  userRepo: Repositories
 
   constructor(private profileService: ProfileService) {
     //this.userinClass = new User("", "", 0, 0, "", "", "", "")

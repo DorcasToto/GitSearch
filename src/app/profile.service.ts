@@ -35,11 +35,11 @@ export class ProfileService {
 
     }
 
-    let baseUrl = this.apiUrl + user.value + '?access_token=' + this.apiKey;
+    let baseUrl = this.apiUrl + user + '?access_token=' + this.apiKey;
     let promise = new Promise((resolve, reject) => {
       this.http.get<Responsee>(baseUrl).toPromise().then(res => {
         this.userProfile = res;
-        // console.log(baseUrl);
+        //console.log(res);
         resolve()
 
       }, error => {
@@ -59,11 +59,13 @@ export class ProfileService {
 
     }
 
-    let url = this.apiUrl + user.value + '/repos' + '?access_token=' + this.apiKey;
+    let url = this.apiUrl + user + '/repos' + '?access_token=' + this.apiKey;
     let promise = new Promise((resolve, reject) => {
       this.http.get<apiResponse>(url).toPromise().then(response => {
 
         this.userRepo = response;
+
+        console.log(this.userRepo);
 
         //console.log(response);
         resolve()
