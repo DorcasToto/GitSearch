@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '../environments/environment';
 
 import { User } from './searchClasses/user'
+import { Repositories } from './searchClasses/repositories'
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,8 @@ import { User } from './searchClasses/user'
 export class ProfileService {
 
   userProfile: User
+
+  userRepo: Repositories
 
   apiUrl = environment.API_URL;
   apiKey = environment.API_KEY;
@@ -46,6 +49,32 @@ export class ProfileService {
     });
     return promise
   }
+
+  searchRepos(user: string) {
+    interface apiResponse {
+      name: string,
+      description: string,
+      git_url: string,
+      language: string
+
+    }
+
+    let baseUrl = this.apiUrl + user + '?access_token=' + this.apiKey;
+    let promise = new Promise((resolve, reject) => {
+      this.http.get<apiResponse>(baseUrl).toPromise().then(res => {
+        this.userRepo = res;
+        console.log(baseUrl);
+        resolve()
+
+      }, error => {
+        reject();
+      })
+
+    });
+    return promise
+  }
+
+
 }
 
 
