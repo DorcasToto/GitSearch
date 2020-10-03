@@ -10,19 +10,16 @@ import { User } from './searchClasses/user'
 })
 export class ProfileService {
 
+  userProfile: User
+
   apiUrl = environment.API_URL;
   apiKey = environment.API_KEY;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    this.userProfile = new User('', '', 0, 0, '', '', '', '');
+  }
 
-  userinClass:User
-
-  // searchUser(user): Observable<any> {
-
-  //   return this.http.get(this.apiUrl + user.value);
-  // }
-
-  searchUser(user) {
+  searchUser(user: string) {
     interface Responsee {
       login: string,
       avatar_url: string,
@@ -31,35 +28,24 @@ export class ProfileService {
       bio: string,
       location: string,
       email: string,
-      repos: string,
+      public_repos: string,
 
     }
+
+    let baseUrl = this.apiUrl + user + '?access_token=' + this.apiKey;
     let promise = new Promise((resolve, reject) => {
-      this.http.get<Responsee>(this.apiUrl + user.value).toPromise().then(res => {
-
-        let username = res.login;
-        let image = res.avatar_url;
-        let followers = res.followers;
-        let following = res.following;
-        let bio = res.bio;
-        let location = res.location;
-        let emailAddress = res.email;
-        let repos = res.repos;
-
-        let user = new User(username,image,followers,following,bio,location,emailAddress,repos)
-        this.userinClass = user;
-        
-        console.log(res.repos);
+      this.http.get<Responsee>(baseUrl).toPromise().then(res => {
+        this.userProfile = res;
+        console.log(baseUrl);
         resolve()
 
       }, error => {
-        //console.log("error");
         reject();
       })
 
     });
+    return promise
   }
-
 }
 
 

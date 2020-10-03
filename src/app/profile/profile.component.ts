@@ -1,6 +1,6 @@
-import { ThrowStmt } from '@angular/compiler';
+
 import { Component, OnInit } from '@angular/core';
-import { from } from 'rxjs';
+
 
 import { ProfileService } from '../profile.service'
 import { User } from '../searchClasses/user';
@@ -11,17 +11,29 @@ import { User } from '../searchClasses/user';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  userinTemplate: User;
 
-  constructor(private profileService: ProfileService) { }
+  userProfile: User
 
-  ngOnInit(): void {
-    this.searchUser('');
-
+  constructor(private profileService: ProfileService) {
+    //this.userinClass = new User("", "", 0, 0, "", "", "", "")
   }
+
   searchUser(user) {
 
-    this.profileService.searchUser(user);
-    this.userinTemplate = this.profileService.userinClass;
+    this.profileService.searchUser(user).then((succes) => {
+      this.userProfile = this.profileService.userProfile;
+    },
+      (error) => {
+        console.log(error)
+      }
+
+    )
+
+  }
+
+  ngOnInit(): void {
+
+    this.searchUser('DorcasToto');
+
   }
 }

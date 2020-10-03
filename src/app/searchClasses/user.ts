@@ -1,12 +1,13 @@
 export class User {
-    constructor(public username: string,
-        public image: string,
+    constructor(
+        public login: string,
+        public avatar_url: string,
         public followers: number,
         public following: number,
         public bio: string,
         public location: string,
-        public emailaddress: string,
-        public repos: string,
+        public email: string,
+        public public_repos: string,
     ) {
 
     }
