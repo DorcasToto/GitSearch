@@ -1,0 +1,12 @@
+<div class="card-body bg-dark">
+    <form class="form-inline" #name="ngForm">
+        <div class="form-group">
+            <input type="text" class="form control" placeholder="github user" [(ngModel)]="searchTerm"
+                name="searchTerm">
+
+        </div>
+        <div class="form-group">
+            <input type="submit" class="btn btn-primary btn-sm" value="searh user" (click)="searchUser()">
+        </div>
+    </form>
+</div>

@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { ProfileComponent } from './profile/profile.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { FormComponent } from './form/form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProfileComponent
+    ProfileComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,

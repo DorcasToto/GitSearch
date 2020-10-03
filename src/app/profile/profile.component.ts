@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 
 
 import { ProfileService } from '../profile.service'
+import { Repositories } from '../searchClasses/repositories';
 import { User } from '../searchClasses/user';
 
 @Component({
@@ -13,6 +14,7 @@ import { User } from '../searchClasses/user';
 export class ProfileComponent implements OnInit {
 
   userProfile: User
+  userRepo:Repositories
 
   constructor(private profileService: ProfileService) {
     //this.userinClass = new User("", "", 0, 0, "", "", "", "")
@@ -26,7 +28,14 @@ export class ProfileComponent implements OnInit {
       (error) => {
         console.log(error)
       }
+    )
 
+    this.profileService.displayRepos(user).then((succes) => {
+      this.userProfile = this.profileService.userProfile;
+    },
+      (error) => {
+        console.log(error)
+      }
     )
 
   }
