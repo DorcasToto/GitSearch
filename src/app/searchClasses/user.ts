@@ -6,7 +6,7 @@ export class User {
         public bio: string,
         public location: string,
         public emailaddress: string,
-        public repos: string
+        public repos: string,
     ) {
 
     }

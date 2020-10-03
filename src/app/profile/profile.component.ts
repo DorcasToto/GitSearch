@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { from } from 'rxjs';
 
 import { ProfileService } from '../profile.service'
+import { User } from '../searchClasses/user';
 
 @Component({
   selector: 'app-profile',
@@ -10,6 +11,7 @@ import { ProfileService } from '../profile.service'
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+  userinTemplate: User;
 
   constructor(private profileService: ProfileService) { }
 
@@ -19,6 +21,7 @@ export class ProfileComponent implements OnInit {
   }
   searchUser(user) {
 
-    this.profileService.searchUser(user)
+    this.profileService.searchUser(user);
+    this.userinTemplate = this.profileService.userinClass;
   }
 }
