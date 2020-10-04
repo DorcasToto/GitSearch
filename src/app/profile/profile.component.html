@@ -25,25 +25,30 @@
 
             <div class=" testimonial-card">
 
-                <div class="card-up indigo lighten-1"></div>
-
-                <div class="avatar" style="z-index:4;">
+                <div class="avatar pt-3" style="z-index:4;">
                     <img src="{{userProfile.avatar_url}}" class="width-full border bg-white" alt="woman avatar"
                         style="height:auto;" alt width="260" height="260">
                 </div>
                 <div class="card-body">
                     <h4 class="card-title">{{userProfile.login}}</h4>
                     <hr>
-                    <p><i class="fas fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos,
-                        adipisci
-                    </p>
+                    <p>{{userProfile.bio}}</p>
+                    <div class="row">
+                        <div class="col-sm">
+                            {{userProfile.followers}}<p>followers</p>
+                        </div>
+                        <div class="col-sm">
+                            {{userProfile.following}}<p>following</p>
+                        </div>
+                    </div>
+                    {{userProfile.location}}
                 </div>
-
             </div>
-
         </div>
 
-        <div class="col-md-9"></div>
+        <div class="col-md-9 pt-3">
+            <h3 class="text-center">Repositories</h3>
+        </div>
     </div>
 
 </div>
