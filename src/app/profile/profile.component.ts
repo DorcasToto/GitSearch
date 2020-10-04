@@ -31,7 +31,7 @@ export class ProfileComponent implements OnInit {
     )
 
     this.profileService.displayRepos(user).then((succes) => {
-      this.userProfile = this.profileService.userProfile;
+      this.userRepo = this.profileService.userRepo;
     },
       (error) => {
         console.log(error)

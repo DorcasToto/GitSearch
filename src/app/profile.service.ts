@@ -20,6 +20,7 @@ export class ProfileService {
 
   constructor(private http: HttpClient) {
     this.userProfile = new User('', '', 0, 0, '', '', '', '');
+
   }
 
   searchUser(user) {
@@ -62,12 +63,7 @@ export class ProfileService {
     let url = this.apiUrl + user + '/repos' + '?access_token=' + this.apiKey;
     let promise = new Promise((resolve, reject) => {
       this.http.get<apiResponse>(url).toPromise().then(response => {
-
         this.userRepo = response;
-
-        console.log(this.userRepo);
-
-        //console.log(response);
         resolve()
 
       }, error => {
