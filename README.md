@@ -1,6 +1,32 @@
 # GitSearch
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.4.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.1.
+
+## Description
+
+A website where users may enter a GitHub username into a form, submit it, and see names and descriptions of that person's public repositories. A person can also look for repositories
+
+## Features
+
+1. Search github username.
+2. Show Profile.
+3. Show Repo names and Description of that particular repo.
+4. Switch through the routes.
+
+## Figma design
+
+ Check through my figma design [here](https://www.figma.com/file/aM538jsyiIxVEZVeMkICxe/mQuote?node-id=0%3A1). It contains two pages.
+ 1. Profile page.
+ 2. About page.
+
+## Languages
+
+1. Typescript
+2. GITHUB API
+
+## Live Application
+
+You can view the live application using this [link](https://dorcastoto.github.io/mQuote/) hosted by Github
 
 ## Development server
 
@@ -22,6 +48,10 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+## License
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+ [MIT](https://github.com/DorcasToto/GitSearch/blob/master/LICENCE.md)
+
+## Collaborator
+
+ © [Dorcas Cherono](https://github.com/DorcasToto)
