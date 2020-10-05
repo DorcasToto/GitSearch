@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { AboutComponent } from './about/about.component';
 import { NavComponent } from './nav/nav.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { OnHoverDirective } from './on-hover.directive';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     FormComponent,
     AboutComponent,
     NavComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    OnHoverDirective
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,5 @@
 <div class="container">
-  
+
     <app-form (searchProf)='searchUser($event)'></app-form>
     <hr>
 
@@ -39,7 +39,7 @@
     <div class="row" *ngFor='let repo of userRepo'>
         <div class="col pt-3">
             <div class="card card-cascade wider reverse mt-3 repo">
-                <div class="card-body card-body-cascade text-center">
+                <div class="card-body card-body-cascade text-center" appOnHover>
                     <h4 class="card-title"><strong>{{repo.name}}</strong></h4>
                     <p class="">{{repo.description}}</p>
                     <span class="row ml-5 h4">Language:<p class="pl-3 red-text">{{repo.language}}</p></span>
