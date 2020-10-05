@@ -10,6 +10,7 @@ import { FormComponent } from './form/form.component';
 
 import { FormsModule } from '@angular/forms';
 import { AboutComponent } from './about/about.component';
+import { NavComponent } from './nav/nav.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { AboutComponent } from './about/about.component';
     AppComponent,
     ProfileComponent,
     FormComponent,
-    AboutComponent
+    AboutComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
