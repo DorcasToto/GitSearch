@@ -11,6 +11,7 @@ import { FormComponent } from './form/form.component';
 import { FormsModule } from '@angular/forms';
 import { AboutComponent } from './about/about.component';
 import { NavComponent } from './nav/nav.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { NavComponent } from './nav/nav.component';
     ProfileComponent,
     FormComponent,
     AboutComponent,
-    NavComponent
+    NavComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
