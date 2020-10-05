@@ -15,8 +15,8 @@ export class ProfileService {
 
   userRepo: Repositories
 
-  apiUrl = environment.API_URL;
-  apiKey = environment.API_KEY;
+  // apiUrl = environment.API_URL;
+  // apiKey = environment.API_KEY;
 
   constructor(private http: HttpClient) {
     this.userProfile = new User('', '', 0, 0, '', '', '', '');
@@ -36,7 +36,7 @@ export class ProfileService {
 
     }
 
-    let baseUrl = this.apiUrl + user + '?access_token=' + this.apiKey;
+    let baseUrl = environment.API_URL + user + '?access_token=' + environment.API_KEY;
     let promise = new Promise((resolve, reject) => {
       this.http.get<Responsee>(baseUrl).toPromise().then(res => {
         this.userProfile = res;
@@ -60,7 +60,7 @@ export class ProfileService {
 
     }
 
-    let url = this.apiUrl + user + '/repos' + '?access_token=' + this.apiKey;
+    let url = environment.API_URL + user + '/repos' + '?access_token=' + environment.API_KEY;
     let promise = new Promise((resolve, reject) => {
       this.http.get<apiResponse>(url).toPromise().then(response => {
         this.userRepo = response;
