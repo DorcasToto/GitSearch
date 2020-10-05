@@ -55,7 +55,7 @@ export class ProfileService {
     interface apiResponse {
       name: string,
       description: string,
-      git_url: string,
+      html_url: string,
       language: string
 
     }
