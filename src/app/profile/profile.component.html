@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container">
     <nav class="navbar navbar-expand-lg navbar-dark indigo">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
             aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,14 +21,18 @@
     <hr>
 
     <div class="row">
-        <div class="col-md-3">
-
+        <div class="col">
             <div class=" testimonial-card">
 
                 <div class="avatar pt-3" style="z-index:4;">
                     <img src="{{userProfile.avatar_url}}" class="width-full border bg-white" alt="woman avatar"
                         style="height:auto;" alt width="260" height="260">
                 </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class=" testimonial-card">
+
                 <div class="card-body">
                     <h4 class="card-title">{{userProfile.login}}</h4>
                     <hr>
@@ -45,41 +49,18 @@
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="col-md-9 pt-3">
-            <h3 class="text-center">Repositories</h3>
-            <div *ngFor='let repo of userRepo'>
-                {{repo.description}}
+    <h3 class="text-center">Repositories</h3>
 
-            </div>
-
-            <!-- Card -->
-            <div class="card card-cascade wider reverse">
+    <div class="row" *ngFor='let repo of userRepo'>
+        <div class="col pt-3">
+            <div class="card card-cascade wider reverse mt-3">
                 <div class="card-body card-body-cascade text-center">
-
-                    <h4 class="card-title"><strong>My adventure</strong></h4>
-                    <!-- Subtitle -->
-                    <h6 class="font-weight-bold indigo-text py-2">Photography</h6>
-                    <!-- Text -->
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem
-                        perspiciatis
-                        voluptatum a, quo nobis, non commodi quia repellendus sequi nulla voluptatem dicta
-                        reprehenderit, placeat
-                        laborum ut beatae ullam suscipit veniam.
-                    </p>
-
-                    <!-- Linkedin -->
-                    <a class="px-2 fa-lg li-ic"><i class="fab fa-linkedin-in"></i></a>
-                    <!-- Twitter -->
-                    <a class="px-2 fa-lg tw-ic"><i class="fab fa-twitter"></i></a>
-                    <!-- Dribbble -->
-                    <a class="px-2 fa-lg fb-ic"><i class="fab fa-facebook-f"></i></a>
-
+                    <h4 class="card-title"><strong>{{repo.name}}</strong></h4>
+                    <p class="card-text h1">{{repo.description}}</p>
                 </div>
-
             </div>
-            <!-- Card -->
-            <!-- {{userRepo.name}} -->
         </div>
     </div>
 
