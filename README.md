@@ -15,7 +15,7 @@ A website where users may enter a GitHub username into a form, submit it, and se
 
 ## Figma design
 
- Check through my figma design [here](https://www.figma.com/file/aM538jsyiIxVEZVeMkICxe/mQuote?node-id=0%3A1). It contains two pages.
+ Check through my figma design [here](https://www.figma.com/file/y50uLOmcPhnQA1Cw33diOX/GithubSearch?node-id=0%3A1). It contains two pages.
  1. Profile page.
  2. About page.
 
